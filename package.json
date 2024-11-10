@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.3.0",
     "apexcharts": "^3.51.0",
     "framer-motion": "^11.5.4",
+    "gh-pages": "^6.2.0",
     "react": "^18.3.1",
     "react-apexcharts": "^1.4.1",
     "react-beautiful-dnd": "^13.1.1",
@@ -30,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -53,5 +56,6 @@
   "devDependencies": {
     "@types/react-beautiful-dnd": "^13.1.8",
     "@types/react-router-dom": "^5.3.3"
-  }
+  },
+  "homepage": "https://Kronii1.github.io/ClockFlix"
 }
