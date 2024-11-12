@@ -10,7 +10,7 @@
 api.ts
 tvApi.ts
 
-searchApi.ts
+/searchApi.ts
 
 # production
 /build
