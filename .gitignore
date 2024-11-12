@@ -9,6 +9,7 @@
 /coverage
 api.ts
 tvApi.ts
+searchApi.ts
 
 # production
 /build
