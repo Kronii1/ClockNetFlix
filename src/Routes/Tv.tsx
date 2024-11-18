@@ -25,6 +25,7 @@ import {
   IGetTopRatedTvShowResults,
 } from "../tvApi";
 import { FaAngleRight, FaChevronLeft } from "react-icons/fa6";
+import useWindowDimensions from "../Components/useWidowDimensions";
 
 const Wrapper = styled.div`
   background-color: black;
@@ -368,15 +369,17 @@ function Tv() {
     */
   }
 
+  const width = useWindowDimensions();
+
   return (
     <Wrapper>
       {isLoading ? (
         <Loader>Loading...</Loader>
       ) : (
         <>
-          <Banner bgphoto={makeImagePath(data?.results[7].backdrop_path || "")}>
-            <Title>{data?.results[7].name}</Title>
-            <Overview>{data?.results[7].overview}</Overview>
+          <Banner bgphoto={makeImagePath(data?.results[8].backdrop_path || "")}>
+            <Title>{data?.results[8].name}</Title>
+            <Overview>{data?.results[8].overview}</Overview>
           </Banner>
           <Slider>
             <AnimatePresence initial={false} onExitComplete={toggleLeaving}>
@@ -393,10 +396,9 @@ function Tv() {
                 <Loader>Loading</Loader>
               ) : (
                 <Row
-                  variants={rowVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  initial={{ x: width + 10 }}
+                  animate={{ x: 0 }}
+                  exit={{ x: -width - 10 }}
                   transition={{ type: "tween", duration: 1 }}
                   key={index}
                 >
@@ -454,10 +456,9 @@ function Tv() {
                 <Loader>Loading</Loader>
               ) : (
                 <Row
-                  variants={rowVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  initial={{ x: width + 10 }}
+                  animate={{ x: 0 }}
+                  exit={{ x: -width - 10 }}
                   transition={{ type: "tween", duration: 1 }}
                   key={airingTodayIndex}
                 >
@@ -518,10 +519,9 @@ function Tv() {
                 <Loader>Loading</Loader>
               ) : (
                 <Row
-                  variants={rowVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  initial={{ x: width + 10 }}
+                  animate={{ x: 0 }}
+                  exit={{ x: -width - 10 }}
                   transition={{ type: "tween", duration: 1 }}
                   key={popularIndex}
                 >

@@ -14,7 +14,7 @@ import { motion, AnimatePresence, useViewportScroll } from "framer-motion";
 import { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import { FaAngleRight, FaChevronLeft } from "react-icons/fa6";
-import { transform } from "typescript";
+import useWindowDimensions from "../Components/useWidowDimensions";
 
 const Wrapper = styled.div`
   background-color: black;
@@ -154,12 +154,6 @@ const infoVariants = {
       duration: 0.3,
     },
   },
-};
-
-const rowVariants = {
-  hidden: { x: window.outerWidth + 5 },
-  visible: { x: 0 },
-  exit: { x: -window.outerWidth - 5 },
 };
 
 /* Slider setting var */
@@ -368,17 +362,17 @@ function Home() {
     */
   }
 
+  const width = useWindowDimensions();
+
   return (
     <Wrapper>
       {isLoading ? (
         <Loader>Loading...</Loader>
       ) : (
         <>
-          <Banner
-            bgphoto={makeImagePath(data?.results[16].backdrop_path || "")}
-          >
-            <Title>{data?.results[16].title}</Title>
-            <Overview>{data?.results[16].overview}</Overview>
+          <Banner bgphoto={makeImagePath(data?.results[2].backdrop_path || "")}>
+            <Title>{data?.results[2].title}</Title>
+            <Overview>{data?.results[2].overview}</Overview>
           </Banner>
           <Slider>
             <AnimatePresence initial={false} onExitComplete={toggleLeaving}>
@@ -395,10 +389,9 @@ function Home() {
                 <Loader>Loading</Loader>
               ) : (
                 <Row
-                  variants={rowVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  initial={{ x: width + 10 }}
+                  animate={{ x: 0 }}
+                  exit={{ x: -width - 10 }}
                   transition={{ type: "tween", duration: 1 }}
                   key={index}
                 >
@@ -456,10 +449,9 @@ function Home() {
                 <Loader>Loading</Loader>
               ) : (
                 <Row
-                  variants={rowVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  initial={{ x: width + 10 }}
+                  animate={{ x: 0 }}
+                  exit={{ x: -width - 10 }}
                   transition={{ type: "tween", duration: 1 }}
                   key={upcomingIndex}
                 >
@@ -520,10 +512,9 @@ function Home() {
                 <Loader>Loading</Loader>
               ) : (
                 <Row
-                  variants={rowVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  initial={{ x: width + 10 }}
+                  animate={{ x: 0 }}
+                  exit={{ x: -width - 10 }}
                   transition={{ type: "tween", duration: 1 }}
                   key={latestIndex}
                 >
