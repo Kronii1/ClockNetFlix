@@ -377,9 +377,11 @@ function Tv() {
         <Loader>Loading...</Loader>
       ) : (
         <>
-          <Banner bgphoto={makeImagePath(data?.results[8].backdrop_path || "")}>
-            <Title>{data?.results[8].name}</Title>
-            <Overview>{data?.results[8].overview}</Overview>
+          <Banner
+            bgphoto={makeImagePath(data?.results[12].backdrop_path || "")}
+          >
+            <Title>{data?.results[12].name}</Title>
+            <Overview>{data?.results[12].overview}</Overview>
           </Banner>
           <Slider>
             <AnimatePresence initial={false} onExitComplete={toggleLeaving}>
