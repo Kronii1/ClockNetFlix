@@ -370,9 +370,11 @@ function Home() {
         <Loader>Loading...</Loader>
       ) : (
         <>
-          <Banner bgphoto={makeImagePath(data?.results[0].backdrop_path || "")}>
-            <Title>{data?.results[0].title}</Title>
-            <Overview>{data?.results[0].overview}</Overview>
+          <Banner
+            bgphoto={makeImagePath(data?.results[13].backdrop_path || "")}
+          >
+            <Title>{data?.results[13].title}</Title>
+            <Overview>{data?.results[13].overview}</Overview>
           </Banner>
           <Slider>
             <AnimatePresence initial={false} onExitComplete={toggleLeaving}>
