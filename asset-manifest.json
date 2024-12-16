@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/ClockNetFlix/static/js/main.72cc977e.js",
+    "main.js": "/ClockNetFlix/static/js/main.6428685f.js",
     "index.html": "/ClockNetFlix/index.html",
-    "main.72cc977e.js.map": "/ClockNetFlix/static/js/main.72cc977e.js.map"
+    "main.6428685f.js.map": "/ClockNetFlix/static/js/main.6428685f.js.map"
   },
   "entrypoints": [
-    "static/js/main.72cc977e.js"
+    "static/js/main.6428685f.js"
   ]
 }
